@@ -13,6 +13,12 @@
         android:theme="@style/Theme.PhotoAlbum"
         tools:targetApi="31">
         <activity
+            android:name=".view.UpdateImageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.AddImageActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>

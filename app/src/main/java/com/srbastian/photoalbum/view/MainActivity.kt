@@ -1,5 +1,6 @@
 package com.srbastian.photoalbum.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -23,7 +24,8 @@ class MainActivity : AppCompatActivity() {
         })
 
         mainBinding.floatingActionButton.setOnClickListener {
-            // Open add imageActivity
+            val intent = Intent(this, AddImageActivity::class.java)
+            startActivity(intent)
         }
     }
 }
