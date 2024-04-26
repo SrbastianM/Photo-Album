@@ -85,7 +85,7 @@ class AddImageActivity : AppCompatActivity() {
                         } else {
                             MediaStore.Images.Media.getBitmap(this.contentResolver, imageUri)
                         }
-
+                        addImageBinding.ivAddImage.setImageBitmap(selectedImage)
                     }
                 }
 
