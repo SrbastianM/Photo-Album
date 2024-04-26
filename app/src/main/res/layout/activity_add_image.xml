@@ -58,7 +58,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/etDescription"
             android:layout_width="300dp"
             android:layout_height="100dp"
             android:ems="10"
