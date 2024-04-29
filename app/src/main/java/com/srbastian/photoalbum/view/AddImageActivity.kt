@@ -45,7 +45,7 @@ class AddImageActivity : AppCompatActivity() {
 
         // Solicit the permissions to access the Media Gallery
 
-        addImageBinding.ivAddImage.setOnClickListener {
+        addImageBinding.ivAddImage.setOnClickListener   {
 
             if (ControlPermission.checkPermission(this)) {
                 val intent =

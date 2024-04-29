@@ -1,13 +1,17 @@
 package com.srbastian.photoalbum.adapter
 
+import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.srbastian.photoalbum.databinding.ImageItemBinding
 import com.srbastian.photoalbum.model.MyImages
 import com.srbastian.photoalbum.util.ConvertImage
+import com.srbastian.photoalbum.view.UpdateImageActivity
 
-class MyImagesAdapter : RecyclerView.Adapter<MyImagesAdapter.myImagesViewHolder>() {
+class MyImagesAdapter(val activity: Activity) :
+    RecyclerView.Adapter<MyImagesAdapter.myImagesViewHolder>() {
 
     var imageList: List<MyImages> = ArrayList()
 
@@ -39,8 +43,20 @@ class MyImagesAdapter : RecyclerView.Adapter<MyImagesAdapter.myImagesViewHolder>
             itemBinding.tvDescription.text = myImage.imageDescription
             val imageAsBitMap = ConvertImage.convertToBitmap(myImage.imageAsString)
             itemBinding.imageView.setImageBitmap(imageAsBitMap)
+
+            itemBinding.cardView.setOnClickListener {
+                val intent = Intent(activity, UpdateImageActivity::class.java)
+                intent.putExtra("id", myImage.imageId)
+                activity.startActivity(intent)
+            }
+
         }
 
+    }
+
+    // return item and given position
+    fun returnItemAndGivenPosition(position: Int): MyImages {
+        return imageList[position]
     }
 
 }

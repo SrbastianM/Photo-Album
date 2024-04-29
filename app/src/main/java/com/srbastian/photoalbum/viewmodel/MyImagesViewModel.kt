@@ -35,4 +35,8 @@ class MyImagesViewModel(application: Application) : AndroidViewModel(application
         return imagesList
     }
 
+    suspend fun getItemById(id: Int): MyImages {
+        return repository.getItemById(id)
+    }
+
 }
